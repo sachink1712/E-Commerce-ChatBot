@@ -4,6 +4,7 @@ import json
 import sqlite3
 import pandas as pd
 from groq import Groq
+import streamlit as st
 from pprint import pprint
 from dotenv import load_dotenv
 
