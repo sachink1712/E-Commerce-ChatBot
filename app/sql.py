@@ -9,8 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv('/Users/sachinkumar/Documents/Gen AI Course/E-commerce chatbot/.env')
 
-GROQ_MODEL = os.getenv("GROQ_MODEL")
-sql_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+GROQ_MODEL = st.secrets.get("GROQ_MODEL")
+sql_client = Groq(api_key=st.secrets.get("GROQ_API_KEY"))
 db_path = "/Users/sachinkumar/Documents/Gen AI Course/E-commerce chatbot/web_scrapping/db.sqlite"
 
 def run_sql_query(query):
@@ -55,7 +55,7 @@ def generate_sql_query(query):
                 "content": query,
             }
         ],
-        model = os.getenv("GROQ_MODEL"),
+        model = st.secrets.get("GROQ_MODEL"),
         temperature = 0.2,
         max_tokens = 1024
     )
@@ -110,7 +110,7 @@ def comprehensive_answer(question, context):
                 "content": f"QUESTION: {question} CONTEXT: {context}",
             }
         ],
-        model = os.getenv("GROQ_MODEL"),
+        model = st.secrets.get("GROQ_MODEL"),
         temperature = 0.2
     )
     llm_answer = chat_completion.choices[0].message.content
