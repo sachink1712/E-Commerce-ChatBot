@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv('/Users/sachinkumar/Documents/Gen AI Course/E-commerce chatbot/.env')
 
 groq_client = Groq(
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = st.secrets.get("GROQ_API_KEY")
 )
 
 def small_talk_generator(query):
@@ -17,7 +17,7 @@ def small_talk_generator(query):
                 "content": query,
             }
         ],
-        model = os.getenv("GROQ_MODEL"),
+        model = st.secrets.get("GROQ_MODEL"),
         temperature = 0.9,
         # max_tokens = 500
     )
