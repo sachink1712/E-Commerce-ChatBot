@@ -15,7 +15,7 @@ faq_path = BASE_DIR / "resources" / "faq_data.csv"
 chroma_client = chromadb.Client()
 collection_name_faq = 'faqs'
 ef = SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
-groq_client = Groq(api_key = os.getenv("GROQ_API_KEY"))
+groq_client = Groq(api_key = st.secrets.get("GROQ_API_KEY")
 
 def ingest_faq_data(path):
     print(f"Injestion FAQ data to chroma")
@@ -64,7 +64,7 @@ def generate_answer(query, context):
                 "content": prompt,
             }
         ],
-        model = os.getenv("GROQ_MODEL"),
+        model = st.secrets.get("GROQ_MODEL"),
     )
     llm_answer = chat_completion.choices[0].message.content
     return llm_answer
