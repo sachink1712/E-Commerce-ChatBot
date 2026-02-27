@@ -2,6 +2,8 @@
 
 This is POC of an intelligent chatbot tailored for an e-commerce platform, enabling seamless user interactions by accurately identifying the intent behind user queries. It leverages real-time access to the platform's database, allowing it to provide precise and up-to-date responses.
 
+Application Link - https://e-commerce-chatbot-e5axelevytwzunjuojc5id.streamlit.app
+
 Folder structure
 1. app: All the code for chatbot
 2. web-scraping: Code to scrap e-commerce website 
