@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from groq import Groq
+import streamlit as st
 from pathlib import Path
 from dotenv import load_dotenv
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
