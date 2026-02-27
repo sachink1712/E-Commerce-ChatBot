@@ -95,7 +95,44 @@ sql = Route(
     ],
     score_threshold=0.35
 )
-routes = [faq, sql]
+
+small_talk = Route(
+    name = 'small_talk',
+    utterances = [
+        "How are you?",
+        "What is your name?",
+        "Are you a robot?",
+        "What are you?",
+        "What do you do?",
+        "Where are you from",
+        "Who are you?",
+        "Can you introduce yourself?",
+        "What should I call you?",
+        "Are you an AI?",
+        "Are you human?",
+        "Are you a chatbot?",
+        "What kind of assistant are you?",
+        "What’s your purpose?",
+        "What are you designed for?",
+        "Who created you?",
+        "What can you help me with?",
+        "What are your features?",
+        "What services do you provide?",
+        "How can you assist me?",
+        "Can you answer my questions?",
+        "Can you help me shop?",
+        "Where were you built?",
+        "Which company made you?",
+        "Do you live on the internet?",
+        "Are you always online?",
+        "Do you have emotions?",
+        "Do you learn from users?",
+        "How do you work?",
+        "What technology do you use?"
+    ],
+    score_threshold = 0.35
+)
+routes = [faq, sql, small_talk]
 
 router = SemanticRouter(
     encoder = ef,
@@ -107,4 +144,5 @@ router = SemanticRouter(
 if __name__ == "__main__":
     print(router("give me the list of nike shoes in pink colour in less than 10k pricing.").name)
     print(router("formal shoes for work").name)
+    print(router("who is your owner?").name)
     # help(Route)

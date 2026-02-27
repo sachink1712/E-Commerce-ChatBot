@@ -1,6 +1,7 @@
 import streamlit as st
 from app.router import router
 from app.sql import sql_chain
+from app.smalltalk import small_talk_generator
 from app.faq import ingest_faq_data, faq_chain, faq_path
 
 ingest_faq_data(faq_path)
@@ -23,6 +24,9 @@ def ask(query):
         return output
     elif route == 'sql':
         output = sql_chain(query)
+        return output
+    elif route == 'small_talk':
+        output = small_talk_generator(query)
         return output
     else:
         return f"Route {route} Not Impletemented yet"
