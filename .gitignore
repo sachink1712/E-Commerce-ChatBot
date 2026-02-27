@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+app/__pycache__
+
+# Virtual environment
+.venv/
+
+# VSCode configs
+.vscode/
+
+# Local DB and cache
+vector_db/
+
+# Environment variables
+.env
+
+# Python version manager
+.python-version
+
+# Lock files (optional)
+uv.lock
+
+# MacOS finder file
+.DS_Store
+
+# Test file
+test

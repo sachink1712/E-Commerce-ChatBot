@@ -1,0 +1,16 @@
+pandas
+langchain
+langchain-groq
+langchain-community
+langchain-chroma
+langchain-huggingface
+langchain-core
+sentence-transformers
+chromadb
+python-dotenv
+semantic-router
+streamlit
+bs4
+ipykernel
+lxml
+selenium
