@@ -1,5 +1,6 @@
 import os
 from groq import Groq
+import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv('/Users/sachinkumar/Documents/Gen AI Course/E-commerce chatbot/.env')
